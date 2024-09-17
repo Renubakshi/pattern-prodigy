@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pattern Prodigy | A memory Booster Game</title>
+    <!--LINK GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap" rel="stylesheet">
     <!-- CSS LINK -->
     <link href="/index.css" rel="stylesheet">
 </head>
 
 <body>
     <main id="main-section">
-    <h1 class="h1">Pattern Prodigy Game</h1>
+    <h1 class="h1">Pattern Prodigy</h1>
     <h2>( A memory Booster Game )</h2>
-    <h3 class="h2">Press any key to start the Game</h3>
+    <h3 class="h3">Press anywhere to start the Game</h3>
+
     <div class="container">
-        <div class="line-one">
-            <div class="box red" id="red" type="button"></div>
-            <div class="box yellow" id="yellow" type="button"></div>
-        </div>
-        <div class="line-two">
-            <div class="box green" id="green" type="button"></div>
-            <div class="box blue"id="blue" type="button"></div>
-        </div>
+        <figure class="line-one">
+            <img src="./assets/red.png" alt="Red" class="red allBtns" type="button" id="red">
+            <img src="./assets/yellow.png" alt="Yellow" class="yellow allBtns" type="button" id="yellow">
+        </figure>
+        <figure class="line-two">
+            <img src="./assets/green.png" alt="Green" class="green allBtns" type="button" id="green">
+            <img src="./assets/blue.png" alt="Blue" class="blue allBtns" type="button" id="blue">
+        </figure>
     </div>
     </main>
     <script src="/app.js"></script>

@@ -3,21 +3,22 @@ let userSeq = [];
 const btns = ["red", "blue", "green", "yellow"];//for random btn flash
 let started = false;
 let level = 0;
-const h2 = document.querySelector(".h2");
+let highestScore = [];
+const h3 = document.querySelector(".h3");
 
-window.addEventListener("keydown", function (e) {
+window.addEventListener("click",startGame);
+window.addEventListener("keydown",startGame);
+function startGame(e){
     if (started == false) {
         console.log("Game is started");
         started = true;
         levelUp();
-        const allBtns = document.querySelectorAll(".box")
-        for (let btn of allBtns) {
+            const allBtns = document.querySelectorAll(".allBtns")
+            for (let btn of allBtns) {
             btn.addEventListener("click", btnPress);
         }
     }
-});
-console.log("hi");
-
+};
 
 // for button flash
 function btnFlash(btn) {
@@ -28,45 +29,50 @@ function btnFlash(btn) {
 }
 // for level count
 function levelUp() {
-    userSeq = [];
+    userSeq = []; //Reset UserSeq
     level++;
-    h2.innerText = `Level ${level}`;
+    h3.innerText = `Level ${level}`;
 
     // random button flash
     let randIdx = Math.floor(Math.random() * 4)
     let randColor = btns[randIdx];
     gameSeq.push(randColor);
-    console.log(gameSeq);
+    console.log( "gameseq "+gameSeq);
     let randBtn = document.querySelector(`.${randColor}`);
     btnFlash(randBtn);
 }
 
 // to chack the sequence
 function checkAns(idx) {
-    // let idx = level-1;
     if (userSeq[idx] === gameSeq[idx]) {
         if (userSeq.length === gameSeq.length) {
-            setTimeout(levelUp, 1000);
+            setTimeout(levelUp, 1500);
         }
     } else {
-        h2.innerHTML = `Game Over! Your score was <b> ${level}</b>.<br> Press any key to start `;
-        h2.parentElement.classList.add("gameOverFlash");
+        h3.innerHTML = `Game Over! Your score was <b> ${level}</b>.<br> Press any key to start `;
+        h3.parentElement.classList.add("gameOverFlash");
         setTimeout(function () {
-            h2.parentElement.classList.remove("gameOverFlash")
-        }, 250)
+            h3.parentElement.classList.remove("gameOverFlash")
+        }, 250);
         reset();
     }
 }
+
+// SELECTED ALL BUTTONS
+// const allBtns = document.querySelectorAll(".allBtns")
+// for (let btn of allBtns) {
+//     btn.addEventListener("click", btnPress);
+// }
 
 // for button press
 function btnPress() {
     let btn = this;
     btnFlash(btn);
-    // let userColor = btn.getAttribute("class") both are giving 3 class name so we give id and select that
-    // userSeq.push(btn.className); 
+    // let userColor = btn.getAttribute("class") both are giving 3 classes so we gave id and select that
     let userColor = btn.getAttribute("id");
     userSeq.push(userColor);
-
+    console.log("user seq"+userSeq);
+    
     checkAns(userSeq.length - 1);
 }
 
@@ -76,4 +82,8 @@ function reset() {
     userSeq = [];
     started = false;
     level = 0;
+    const allBtns = document.querySelectorAll(".allBtns")
+    for (let btn of allBtns) {
+    btn.removeEventListener("click", btnPress);
 }
+ }

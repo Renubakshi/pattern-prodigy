@@ -3,52 +3,40 @@
     margin: 0;
     padding:0;
     box-sizing: border-box;
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 html{
     font-size: 62.5%;
 }
 
-/* CSS CUSTOM VARIABLES */
-
-
-
-
-
-
-
 body{
     text-align: center;
 }
 
-.container{
-    display:flex;
-    justify-content: center;
-    
-
+#main-section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
-.container .box{
-    border: 1rem solid black;
-    margin: 1rem;
-    border-radius: 20%;
-    height: 10rem;
-    width:10rem;
-
+h1{
+    margin-top:1rem;
 }
-.yellow{
-    background-color: #f99b45;
+h3{
+    margin: 2rem 0;
+    font-size: 2rem;
 }
-.red{
-    background-color:#d95980
-}
-.blue{
-    background-color: #819ff9;
-}
-.green{
-    background-color: #63aac0;
+.yellow,.red,.green,.blue{
+    margin: .4rem;
+    height: 100%;
+    width:13rem;
 }
 
 .flash{
-    background-color: #fff;
+    filter: sepia(0%) hue-rotate(8deg) saturate(7);
 }
 .gameOverFlash{
     background-color: red;
