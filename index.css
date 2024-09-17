@@ -10,11 +10,9 @@
 html{
     font-size: 62.5%;
 }
-
 body{
     text-align: center;
 }
-
 #main-section{
     height: 100vh;
     display: flex;
@@ -34,10 +32,23 @@ h3{
     height: 100%;
     width:13rem;
 }
-
 .flash{
     filter: sepia(0%) hue-rotate(8deg) saturate(7);
 }
 .gameOverFlash{
     background-color: red;
+}
+
+/* MEDIA QUERIES */
+@media screen and (orientation:portrait){
+    .desktop{
+        display: none;
+    }
+
+}
+@media screen and (orientation:landscape){
+    .mobile{
+        display: none;
+    }
+
 }

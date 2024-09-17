@@ -6,7 +6,7 @@ let level = 0;
 let highestScore = [];
 const h3 = document.querySelector(".h3");
 
-window.addEventListener("click",startGame);
+window.addEventListener("touchstart",startGame);
 window.addEventListener("keydown",startGame);
 function startGame(e){
     if (started == false) {
@@ -49,6 +49,8 @@ function checkAns(idx) {
             setTimeout(levelUp, 1500);
         }
     } else {
+        console.log("game over");
+        
         h3.innerHTML = `Game Over! Your score was <b> ${level}</b>.<br> Press any key to start `;
         h3.parentElement.classList.add("gameOverFlash");
         setTimeout(function () {
@@ -57,12 +59,6 @@ function checkAns(idx) {
         reset();
     }
 }
-
-// SELECTED ALL BUTTONS
-// const allBtns = document.querySelectorAll(".allBtns")
-// for (let btn of allBtns) {
-//     btn.addEventListener("click", btnPress);
-// }
 
 // for button press
 function btnPress() {
