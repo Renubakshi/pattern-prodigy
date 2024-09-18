@@ -20,6 +20,17 @@ body{
     justify-content: flex-start;
     align-items: center;
 }
+.start{
+    border-radius: 1rem;
+    width: fit-content;
+    border: .2rem solid #72728feb;
+    line-height: 2;
+    padding: 0 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #8de2e9c2;
+    box-shadow: .2rem .4rem .4rem gray;
+}
 h1{
     margin-top:1rem;
 }
@@ -40,14 +51,9 @@ h3{
 }
 
 /* MEDIA QUERIES */
-@media screen and (orientation:portrait){
-    .desktop{
-        display: none;
-    }
 
-}
-@media screen and (orientation:landscape){
-    .mobile{
+@media screen and (min-width:431px){
+    .start{
         display: none;
     }
 

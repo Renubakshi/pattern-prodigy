@@ -5,8 +5,10 @@ let started = false;
 let level = 0;
 let highestScore = [];
 const h3 = document.querySelector(".h3");
+const startBtn = document.querySelector(".start");
+console.log(h3);
 
-window.addEventListener("touchstart",startGame);
+startBtn.addEventListener("touchstart",startGame);
 window.addEventListener("keydown",startGame);
 function startGame(e){
     if (started == false) {
@@ -51,7 +53,7 @@ function checkAns(idx) {
     } else {
         console.log("game over");
         
-        h3.innerHTML = `Game Over! Your score was <b> ${level}</b>.<br> Press any key to start `;
+        h3.innerHTML = `Game Over! Your score was <b> ${level}</b>.<br> Prese key to start `;
         h3.parentElement.classList.add("gameOverFlash");
         setTimeout(function () {
             h3.parentElement.classList.remove("gameOverFlash")
